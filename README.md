@@ -1,10 +1,10 @@
 # GRAND THEFT SOLANA
 
-A top-down GTA style crime game set in a Solana-themed city. One HTML file, zero dependencies, zero build steps. Open it and play.
+A top-down GTA style crime game set in a Solana-themed city. Pure JavaScript on HTML5 canvas, zero dependencies, zero build steps.
 
 ## Play
 
-Download `index.html` and open it in any browser. That's the whole install.
+Clone the repo and open `index.html` in any browser. That's the whole install.
 
 ## What you do
 
@@ -59,6 +59,24 @@ Progress saves automatically in your browser.
 
 ## Tech
 
-Single-file HTML5 canvas game. All characters are drawn and animated procedurally in code, no sprites, no assets, no external requests. Everything from the walk cycles to the synthwave beat is generated at runtime.
+Pure JavaScript, HTML5 canvas, no frameworks, no build step, no external requests. All characters are drawn and animated procedurally in code, no sprites and no assets. Everything from the walk cycles to the synthwave beat is generated at runtime.
+
+```
+index.html            thin shell, loads the sources
+src/boot.js           canvas + resize
+src/audio.js          WebAudio synth: sfx and music notes
+src/input.js          keyboard + mouse
+src/map.js            city generation, tiles, collision
+src/state.js          globals, player, weapons, helpers
+src/save.js           localStorage save/load
+src/spawn.js          entity spawners + traffic AI
+src/missions.js       the seven-mission campaign
+src/world-init.js     world setup, startGame, respawn
+src/update.js         game logic: combat, AI, physics
+src/render.js         draw helpers + all characters
+src/render-world.js   tiles, world pass, HUD
+src/screens.js        title / wasted / win / pause
+src/main.js           the loop
+```
 
 Parody project. Not affiliated with Solana Labs or anyone else. NFA DYOR etc.
